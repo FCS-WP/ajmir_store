@@ -44,11 +44,11 @@
             &:before {
                 content: "";
                 position: absolute;
-                top: calc(50% - 5px);
-                right: 13px;
+                top: calc(50% - 4px);
+                right: 15px;
                 bottom: 0;
-                width: 10px;
-                height: 10px;
+                width: 8px;
+                height: 8px;
                 background: rgba(0, 0, 0, 0);
                 transform: rotate(45deg);
                 border: 1px solid white;
@@ -69,6 +69,20 @@
 
 
 #footer {
+    .elementor-widget-icon-list{
+        a{
+            color: white;
+            &:hover{
+                color: var(--e-global-color-primary);
+                span{
+                    color: var(--e-global-color-primary)
+                }
+            }
+            &[href^="tel:"]{
+                display: inline;
+            }
+        }
+    }
     .elementor-widget-nav-menu {
         li {
             @include transition;
