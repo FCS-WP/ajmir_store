@@ -69,20 +69,24 @@
 
 
 #footer {
-    .elementor-widget-icon-list{
-        a{
+    .elementor-widget-icon-list {
+        a {
             color: white;
-            &:hover{
+
+            &:hover {
                 color: var(--e-global-color-primary);
-                span{
+
+                span {
                     color: var(--e-global-color-primary)
                 }
             }
-            &[href^="tel:"]{
+
+            &[href^="tel:"] {
                 display: inline;
             }
         }
     }
+
     .elementor-widget-nav-menu {
         li {
             @include transition;
@@ -171,12 +175,29 @@
 }
 
 #content-product {
+    .woocommerce-product-gallery {
+        margin-bottom: 0;
+    }
+
     .woocommerce-product-gallery__wrapper {
+
         a {
             img {
                 display: block;
-                min-height: 500px;
+                height: 500px;
                 object-fit: cover;
+
+                @media screen and (max-width: 767px) {
+                    height: 350px;
+                }
+            }
+        }
+    }
+
+    .elementor-add-to-cart{
+        input{
+            &.qty{
+                width: 80px;
             }
         }
     }
@@ -209,13 +230,15 @@
             background: var(--e-global-color-secondary);
         }
     }
-    .shop_table{
-        tbody{
-            a{
+
+    .shop_table {
+        tbody {
+            a {
                 color: var(--e-global-color-primary)
             }
-            button{
-                &.button{
+
+            button {
+                &.button {
                     padding: 11px 10px 11px;
                 }
             }
@@ -223,7 +246,8 @@
     }
 }
 
-.woocommerce-info, .woocommerce-message {
+.woocommerce-info,
+.woocommerce-message {
     border-top-color: var(--e-global-color-primary);
 
     &:before {
