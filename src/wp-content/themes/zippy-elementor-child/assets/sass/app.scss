@@ -69,20 +69,24 @@
 
 
 #footer {
-    .elementor-widget-icon-list{
-        a{
+    .elementor-widget-icon-list {
+        a {
             color: white;
-            &:hover{
+
+            &:hover {
                 color: var(--e-global-color-primary);
-                span{
+
+                span {
                     color: var(--e-global-color-primary)
                 }
             }
-            &[href^="tel:"]{
+
+            &[href^="tel:"] {
                 display: inline;
             }
         }
     }
+
     .elementor-widget-nav-menu {
         li {
             @include transition;
@@ -119,6 +123,11 @@
 }
 
 #shop_archive {
+    .woocommerce-ordering, .woocommerce-result-count{
+        @media screen and (max-width: 767px) {
+            float: none;
+        }
+    }
     .products {
         li {
             a {
@@ -171,12 +180,29 @@
 }
 
 #content-product {
+    .woocommerce-product-gallery {
+        margin-bottom: 0;
+    }
+
     .woocommerce-product-gallery__wrapper {
+
         a {
             img {
                 display: block;
-                min-height: 500px;
+                height: 500px;
                 object-fit: cover;
+
+                @media screen and (max-width: 767px) {
+                    height: 350px;
+                }
+            }
+        }
+    }
+
+    .elementor-add-to-cart{
+        input{
+            &.qty{
+                width: 80px;
             }
         }
     }
@@ -197,25 +223,29 @@
 }
 
 
-.woocommerce-cart {
 
-    .wc-proceed-to-checkout a.checkout-button,
-    #payment #place_order {
-        background: var(--e-global-color-primary);
-        border-radius: 7px;
-        @include transition;
+// checkout and cart button
+.wc-proceed-to-checkout a.checkout-button,
+#payment #place_order {
+    background: var(--e-global-color-primary) !important;
+    border-radius: 7px !important;
+    @include transition;
 
-        &:hover {
-            background: var(--e-global-color-secondary);
-        }
+    &:hover {
+        background: var(--e-global-color-secondary) !important;
     }
-    .shop_table{
-        tbody{
-            a{
+}
+
+
+.woocommerce-cart {
+    .shop_table {
+        tbody {
+            a {
                 color: var(--e-global-color-primary)
             }
-            button{
-                &.button{
+
+            button {
+                &.button {
                     padding: 11px 10px 11px;
                 }
             }
@@ -223,7 +253,8 @@
     }
 }
 
-.woocommerce-info, .woocommerce-message {
+.woocommerce-info,
+.woocommerce-message {
     border-top-color: var(--e-global-color-primary);
 
     &:before {
